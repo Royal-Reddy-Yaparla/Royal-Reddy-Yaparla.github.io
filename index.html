@@ -1,1 +1,139 @@
-<h1> I am Royal Reddy DevOps Engineer <h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My DevOps Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0d1117;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #161b22;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Royal Reddy's DevOps Portfolio</h1>
+    <p>Learning | Building | Sharing</p>
+  </header>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#interview">Interview Prep</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#tools">Tools & Resources</a>
+  </nav>
+
+  <section id="projects">
+    <h2>🚀 Projects</h2>
+    <div class="card">
+      <h3>Roboshop Microservices on EKS</h3>
+      <p>Implemented CI/CD pipeline, blue-green deployment using Helm and Jenkins. Integrated Trivy and SonarQube for security and quality checks.</p>
+    </div>
+    <div class="card">
+      <h3>Terraform Multi-Environment Infra</h3>
+      <p>Created VPC, EKS, RDS, Bastion with reusable modules using `.tfvars` for DEV and PROD.</p>
+    </div>
+  </section>
+
+  <section id="interview">
+    <h2>🎯 Interview Preparation</h2>
+    <div class="card">
+      <h3>DevOps Questions</h3>
+      <p>Regularly updated set of core DevOps interview questions with my handwritten notes and answers.</p>
+    </div>
+    <div class="card">
+      <h3>Terraform Real-World Q&A</h3>
+      <p>Includes common real-time scenarios and my approach to handling them in production environments.</p>
+    </div>
+  </section>
+
+  <section id="blogs">
+    <h2>✍️ Blogs</h2>
+    <div class="card">
+      <h3>Why Infrastructure as Code Matters</h3>
+      <p>A personal blog post explaining how IaC changed my workflow and made cloud management easier.</p>
+    </div>
+    <div class="card">
+      <h3>My Journey with Kubernetes</h3>
+      <p>How I started learning K8s, built clusters, and deployed apps using Helm and ArgoCD.</p>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>🛠️ Tools & Resources</h2>
+    <div class="card">
+      <h3>Voice-to-Text Practice</h3>
+      <p>I use Google Docs voice typing or Otter.ai to practice interview answers and convert them to text.</p>
+    </div>
+    <div class="card">
+      <h3>Favorite DevOps Channels</h3>
+      <p>GOTO Conferences, TechWorld with Nana, and KodeKloud are part of my learning stack.</p>
+    </div>
+  </section>
+
+</body>
+</html>
