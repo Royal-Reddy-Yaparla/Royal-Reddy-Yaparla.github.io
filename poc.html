@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PoC | Royal Reddy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">Royal Reddy</div>
+      <ul class="nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="poc.html" class="active">PoC</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PoC Section -->
+  <main class="poc-container">
+    <h2 class="section-title">Proof of Concepts</h2>
+    <div class="poc-grid">
+
+      <!-- PoC Card 1 -->
+      <div class="poc-card">
+        <h3>MySQL InnoDB Cluster with Read/Write Splitting</h3>
+        <p>Set up MySQL InnoDB Cluster on Kubernetes with HAProxy for read/write traffic splitting without application code changes.</p>
+        <div class="tags">
+          <span>Kubernetes</span><span>MySQL</span><span>HAProxy</span>
+        </div>
+        <div class="poc-links">
+          <a href="https://github.com/YOUR_REPO" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- PoC Card 2 -->
+      <div class="poc-card">
+        <h3>Blue-Green Deployment Using Helm</h3>
+        <p>Zero-downtime deployments using Helm and Kubernetes service selector switching with rollback support in Jenkins pipeline.</p>
+        <div class="tags">
+          <span>Helm</span><span>Jenkins</span><span>Kubernetes</span>
+        </div>
+        <div class="poc-links">
+          <a href="https://github.com/YOUR_REPO" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
