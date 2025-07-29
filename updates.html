@@ -25,49 +25,53 @@
   <ul id="updates"></ul>
 
 <script>
-  const username = "royal-reddy-yaparla";
-  const updatesList = document.getElementById("updates");
+    const username = "iamroyalreddy";  // change if needed
+    const updatesList = document.getElementById("updates");
 
-  async function getLatestCommits(username) {
-    try {
-      const repoResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-      const repos = await repoResponse.json();
+    async function getLatestCommits(username) {
+      try {
+        // Step 1: Get all public repos (max 100 repos)
+        const repoResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const repos = await repoResponse.json();
 
-      const allCommits = [];
+        const allCommits = [];
 
-      for (let repo of repos) {
-        try {
-          const commitRes = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?per_page=1`);
-          const commitData = await commitRes.json();
+        // Step 2: Fetch the latest commit from each repo
+        for (let repo of repos) {
+          try {
+            const commitRes = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?per_page=1`);
+            const commitData = await commitRes.json();
 
-          if (commitData[0]) {
-            allCommits.push({
-              repo: repo.name,
-              message: commitData[0].commit.message,
-              date: commitData[0].commit.author.date
-            });
+            if (commitData[0]) {
+              allCommits.push({
+                repo: repo.name,
+                message: commitData[0].commit.message,
+                date: commitData[0].commit.author.date
+              });
+            }
+          } catch (err) {
+            console.warn(`Failed to fetch commits for ${repo.name}`);
           }
-        } catch (err) {
-          console.warn(`Failed to fetch commits for ${repo.name}`);
         }
+
+        // Step 3: Sort commits by date
+        allCommits.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        // Step 4: Display top 10 recent commits
+        allCommits.slice(0, 10).forEach(commit => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>📦 ${commit.repo}</strong>: ${commit.message} <br><small>${new Date(commit.date).toLocaleDateString()}</small>`;
+          updatesList.appendChild(li);
+        });
+
+      } catch (err) {
+        updatesList.innerHTML = "<li>Failed to load updates</li>";
+        console.error(err);
       }
-
-      allCommits.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-      allCommits.slice(0, 10).forEach(commit => {
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>📦 ${commit.repo}</strong>: ${commit.message} <br><small>${new Date(commit.date).toLocaleDateString()}</small>`;
-        updatesList.appendChild(li);
-      });
-
-    } catch (err) {
-      updatesList.innerHTML = "<li>Failed to load updates</li>";
-      console.error(err);
     }
-  }
 
-  getLatestCommits(username);
-</script>
+    getLatestCommits(username);
+  </script>
 
 </body>
 </html>
